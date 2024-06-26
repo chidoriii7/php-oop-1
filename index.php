@@ -1,23 +1,33 @@
 <?php
 
-class Movie {
+class Movie 
+{
+    
     public $titolo;
     public $durata;
 
-    public function getTitle() {
+    public function __construct(string $_titolo, string $_durata)
+    {
+        $this->titolo = $_titolo;
+
+        $this->durata = $_durata;
+        
+    }
+
+    public function getTitle(): string {
         return $this->titolo;
     }
 
-    public function setTitle($title) {
+    public function setTitle($title): void {
        $this->titolo = $title;
     }
 }
 
-$shutter_island = new Movie();
+$shutter_island = new Movie('Titolo', 'Durata');
 $shutter_island->setTitle('Shutter Island');
 $shutter_island->durata = '2h 18m';
 
-$fight_club = new Movie();
+$fight_club = new Movie('Titolo', 'Durata');
 $fight_club->setTitle('Fight Club');
 $fight_club->durata = '2h 19m';
 
@@ -38,6 +48,6 @@ var_dump($fight_club);
     <title>php oop v1</title>
 </head>
 <body>
-    
+    <h1></h1>
 </body>
 </html>
