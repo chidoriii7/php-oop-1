@@ -36,6 +36,8 @@ $fight_club->durata = '2h 19m';
 var_dump($shutter_island);
 var_dump($fight_club);
 
+$moviesList = [$fight_club, $shutter_island]
+
 ?>
 
 
@@ -48,6 +50,14 @@ var_dump($fight_club);
     <title>php oop v1</title>
 </head>
 <body>
-    <h1></h1>
+    <h1>Movies</h1>
+
+    <ul>
+        <?php foreach( $moviesList as $movie): ?>
+            <li>
+                <div><?php echo $movie->getTitle(); ?> </div>
+            </li>
+            <?php endforeach; ?>
+    </ul>
 </body>
 </html>
